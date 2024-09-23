@@ -40,7 +40,7 @@ function placeOrder(customerName, ordereditems) {
         
     });
     status: "Pending"
-    console.log(`Order placed for $(customername)`);
+    console.log(`Order placed for $(customerName)`);
 }
 
 // Task 4: Create a Function to Calculate Total for an Order
@@ -51,4 +51,17 @@ function calculateOrderTotal(order) {
         return total + (product.price * item.quantity);
 
     });
+}
+
+// Task 5: Create a Function to Mark an Order as Completed
+
+function completeorder(customerName) {
+    const order =orders.find(customerName);
+    if (order) {
+        order.status = "Completed";
+        console.log(`Order for ${customerName} is now completed`);
+
+    } else {
+        console.error(`No order found for ${customerName}`);
+    }
 }
